@@ -1,0 +1,4 @@
+{"OnlineNewsPopularity.csv" : [" shares", ",", ["url"], "createFeatureNews", "sharesClass"],
+  "The SUM dataset, with noise.csv" : ["Noisy Target", ";", [], "createFeatureNoisySum", "Noisy Target Class"],
+  "The SUM dataset, without noise.csv" : ["Target", ";", [], "createFeatureSum", "Target Class"] ,
+  "Skin_NonSkin.txt" : ["T", "\t", [], "createFeatureSkin", "TC"] }
