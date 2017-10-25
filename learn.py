@@ -2,8 +2,12 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+import sys
+from lib2to3.main import main
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
+import sys
+from lib2to3.main import main
 from sklearn.decomposition import PCA
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer
@@ -50,8 +54,8 @@ for c in configDict:
     df = pd.read_csv(c, header=0, sep=configDict[c][1])
     locals()[configDict[c][3]](df)
     features = list(df.columns.values)
-    print c
-    print df.size
+    print (c)
+    print (df.size)
     print (features)
     #df = df[features[-3:-1]]
     #df = df[0:1000000]
@@ -59,7 +63,7 @@ for c in configDict:
 
     for s in chunkSizes:
         if (df.size < s):
-            print "NA"
+            print ("NA")
             continue
         chunkedDf = df[0:s]
         regTarget = chunkedDf[configDict[c][0]]
@@ -88,7 +92,7 @@ for c in configDict:
 
 
 
-        print "chunk size ", s
+        print ("chunk size ", s)
         print("linReg:"
               , mean_squared_error(regTestTarget, linRegPredict), " ", r2_score(regTestTarget, linRegPredict))
 
@@ -102,7 +106,7 @@ for c in configDict:
             print("randomForest"
                   , precision_score(classTestTarget, randomForestPredict, average='weighted'), " ", f1_score(classTestTarget, randomForestPredict, average='weighted'))
         except Exception as e:
-            print e
+            print (e)
 
 
         try:
@@ -111,7 +115,7 @@ for c in configDict:
             print("logReg:"
                   , precision_score(classTestTarget, logRegPredict, average='weighted'), " ", f1_score(classTestTarget, logRegPredict, average='weighted'))
         except Exception as e:
-            print e
+            print (e)
 
 
     #    linRegScores = cross_val_score(linReg, trainingFeatures, regTarget, cv=10, scoring='r2')
