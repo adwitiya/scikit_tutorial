@@ -1,19 +1,22 @@
-import numpy as np
+#/*********************************************************************/
+#   learn.py -- Implementation for Machine Learning Algorithms         *
+#               using scikit-learn.                                    *
+#     Authors:  Kariem Fahmi                                           *
+#               Adwitiya Chakraborty                                   *
+#               Salil Ajgoankar                                        *
+#                                                                      *
+#      Purpose: Evaluate ML Algorithms in Different Real Life datasets.*
+#                                                                      *
+#               GitHub Repo: https://goo.gl/F9zbHp                     *
+#                Build Date: 24.10.2017                                *
+#/*********************************************************************/
+
+
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-import sys
-from lib2to3.main import main
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
-import sys
-from lib2to3.main import main
-from sklearn.decomposition import PCA
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import FunctionTransformer
 from sklearn.metrics import mean_squared_error, r2_score, accuracy_score, f1_score,precision_score
-import matplotlib.pyplot as plt
-from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 import json
 
@@ -57,8 +60,6 @@ for c in configDict:
     print (c)
     print (df.size)
     print (features)
-    #df = df[features[-3:-1]]
-    #df = df[0:1000000]
 
 
     for s in chunkSizes:
@@ -116,10 +117,3 @@ for c in configDict:
                   , precision_score(classTestTarget, logRegPredict, average='weighted'), " ", f1_score(classTestTarget, logRegPredict, average='weighted'))
         except Exception as e:
             print (e)
-
-
-    #    linRegScores = cross_val_score(linReg, trainingFeatures, regTarget, cv=10, scoring='r2')
-     #   ridgeScores = cross_val_score(ridgeReg, trainingFeatures, regTarget, cv=10, scoring='r2')
-
-        #logRegScores = cross_val_score(logReg, trainingFeatures, classTarget, cv=10)
-        #print "linReg scores ", linRegScores.mean(), " ridgeScores", ridgeScores.mean(), " logRegScores", logRegScores.mean()
