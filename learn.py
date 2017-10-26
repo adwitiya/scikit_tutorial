@@ -11,14 +11,22 @@
 #                Build Date: 24.10.2017                                *
 #/*********************************************************************/
 
-
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score, accuracy_score, f1_score,precision_score
+from sklearn.metrics import mean_squared_error, r2_score, f1_score,precision_score
 from sklearn.ensemble import RandomForestClassifier
 import json
+
+# Class for handling Output Colors
+class bcolors:
+    HEADER = '\033[95m'
+    OKGREEN = '\033[92m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def createFeatureNews(df):
 
@@ -44,12 +52,16 @@ def createFeatureSkin(df):
     df.loc[skin, 'TC'] = 1
     df.loc[noskin,'TC'] = 2
 
+# Chunk Sizes for datasets
 chunkSizes = [100,500,1000,5000,10000,50000, 100000, 500000, 1000000,5000000,10000000]
 
 
-
-configDict = json.load(open('config.json'))
-
+try:
+#   Loading The config file
+    configDict = json.load(open('config.json'))
+except Exception as e:
+    print (bcolors.FAIL+"Unable to Load config file --", e)
+    quit()
 
 
 for c in configDict:
@@ -57,14 +69,13 @@ for c in configDict:
     df = pd.read_csv(c, header=0, sep=configDict[c][1])
     locals()[configDict[c][3]](df)
     features = list(df.columns.values)
-    print (c)
-    print (df.size)
-    print (features)
+    print (bcolors.HEADER+bcolors.BOLD+"Data Set:",c)
+    print (bcolors.UNDERLINE+"Number of Instances:",df.size)
 
 
     for s in chunkSizes:
         if (df.size < s):
-            print ("NA")
+            print (bcolors.FAIL+"Cannot Compute more than chunk sizes.")
             continue
         chunkedDf = df[0:s]
         regTarget = chunkedDf[configDict[c][0]]
@@ -93,19 +104,19 @@ for c in configDict:
 
 
 
-        print ("chunk size ", s)
-        print("linReg:"
-              , mean_squared_error(regTestTarget, linRegPredict), " ", r2_score(regTestTarget, linRegPredict))
+        print (bcolors.BOLD+"Chunk Size:", s)
+        print(bcolors.OKGREEN+"Linear Regression --",
+              c ,"RMSE:", mean_squared_error(regTestTarget, linRegPredict), "R2 Score:", r2_score(regTestTarget, linRegPredict))
 
-        print("ridgeReg:"
-              , mean_squared_error(regTestTarget, ridgeRegPredict), " ", r2_score(regTestTarget, ridgeRegPredict))
+        print(bcolors.OKGREEN+"Ridge Regression --",
+              c , "RMSE:",mean_squared_error(regTestTarget, ridgeRegPredict), "R2 Score:", r2_score(regTestTarget, ridgeRegPredict))
 
 
         try:
             randomForest.fit(classTrainFeatures, classTrainTarget)
             randomForestPredict = randomForest.predict(classTestFeatures)
-            print("randomForest"
-                  , precision_score(classTestTarget, randomForestPredict, average='weighted'), " ", f1_score(classTestTarget, randomForestPredict, average='weighted'))
+            print(bcolors.OKGREEN+"Random Forest --",
+                  c,"Accuracy:", precision_score(classTestTarget, randomForestPredict, average='weighted'), "f1 Score:", f1_score(classTestTarget, randomForestPredict, average='weighted'))
         except Exception as e:
             print (e)
 
@@ -113,7 +124,8 @@ for c in configDict:
         try:
             logReg.fit(classTrainFeatures, classTrainTarget)
             logRegPredict = logReg.predict(classTestFeatures)
-            print("logReg:"
-                  , precision_score(classTestTarget, logRegPredict, average='weighted'), " ", f1_score(classTestTarget, logRegPredict, average='weighted'))
+            print(bcolors.OKGREEN+"Logistic Regression--",
+                  c,"Accuracy:", precision_score(classTestTarget, logRegPredict, average='weighted'), "f1 Score:", f1_score(classTestTarget, logRegPredict, average='weighted'))
+            print ('\n')
         except Exception as e:
             print (e)
