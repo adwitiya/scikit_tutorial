@@ -58,7 +58,7 @@ def createFeatureSkin(df):
     df.loc[noskin,'TC'] = 2
 
 # Chunk Sizes for datasets
-chunkSizes = [100,500,1000,5000,10000,50000, 100000, 500000, 1000000,5000000,10000000]
+chunkSizes = [100,500,1000,5000,10000,50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000]
 
 
 try:
@@ -132,6 +132,5 @@ for c in configDict:
             logRegPredict = logReg.predict(classTestFeatures)
             print(bcolors.OKGREEN+"Logistic Regression--",
                   c,"Accuracy:", precision_score(classTestTarget, logRegPredict, average='weighted'), "f1 Score:", f1_score(classTestTarget, logRegPredict, average='weighted'))
-            print ('\n')
         except Exception as e:
             print (e)
