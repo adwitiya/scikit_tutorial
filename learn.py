@@ -11,20 +11,25 @@
 #                Build Date: 24.10.2017                                *
 #/*********************************************************************/
 
+from sklearn.linear_model \
+    import LogisticRegression
+from sklearn \
+    import linear_model
+from sklearn.model_selection \
+    import train_test_split
+from sklearn.metrics \
+    import mean_squared_error, r2_score, f1_score,precision_score
+from sklearn.ensemble \
+    import RandomForestClassifier
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn import linear_model
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score, f1_score,precision_score
-from sklearn.ensemble import RandomForestClassifier
 import json
 
 # Class for handling Output Colors
 class bcolors:
     HEADER = '\033[95m'
     OKGREEN = '\033[92m'
+    OKBLUE = '\033[94m'
     FAIL = '\033[91m'
-    ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
@@ -105,13 +110,14 @@ for c in configDict:
 
 
         print (bcolors.BOLD+"Chunk Size:", s)
+        print (bcolors.OKBLUE+"Regression Algorithms:")
         print(bcolors.OKGREEN+"Linear Regression --",
               c ,"RMSE:", mean_squared_error(regTestTarget, linRegPredict), "R2 Score:", r2_score(regTestTarget, linRegPredict))
 
         print(bcolors.OKGREEN+"Ridge Regression --",
               c , "RMSE:",mean_squared_error(regTestTarget, ridgeRegPredict), "R2 Score:", r2_score(regTestTarget, ridgeRegPredict))
 
-
+        print(bcolors.OKBLUE + "Classification Algorithms:")
         try:
             randomForest.fit(classTrainFeatures, classTrainTarget)
             randomForestPredict = randomForest.predict(classTestFeatures)
