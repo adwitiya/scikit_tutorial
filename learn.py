@@ -11,6 +11,9 @@
 #                Build Date: 24.10.2017                                *
 #/*********************************************************************/
 
+import pandas as pd
+import json
+import os
 from sklearn.linear_model \
     import LogisticRegression
 from sklearn \
@@ -21,8 +24,6 @@ from sklearn.metrics \
     import mean_squared_error, r2_score, f1_score,precision_score
 from sklearn.ensemble \
     import RandomForestClassifier
-import pandas as pd
-import json
 
 # Class for handling Output Colors
 class bcolors:
@@ -59,24 +60,25 @@ def createFeatureSkin(df):
 
 # Chunk Sizes for datasets
 chunkSizes = [100,500,1000,5000,10000,50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000]
-
+chunkSizes =[100]
+fileLinesFinal = []
 
 try:
+
 #   Loading The config file
     configDict = json.load(open('config.json'))
 except Exception as e:
     print (bcolors.FAIL+"Unable to Load config file --", e)
     quit()
 
-
 for c in configDict:
 
-    df = pd.read_csv(c, header=0, sep=configDict[c][1])
+    absPathDataset = os.path.abspath(c)
+    df = pd.read_csv(absPathDataset, header=0, sep=configDict[c][1])
     locals()[configDict[c][3]](df)
     features = list(df.columns.values)
     print (bcolors.HEADER+bcolors.BOLD+"Data Set:",c)
     print (bcolors.UNDERLINE+"Number of Instances:",df.size)
-
 
     for s in chunkSizes:
         if (df.size < s):
@@ -108,29 +110,47 @@ for c in configDict:
         ridgeRegPredict = ridgeReg.predict(regTestFeatures)
 
 
-
+        fileLines = []
+        tempLine = "Chunk Size: %s"%s
+        fileLines.append(tempLine)
         print (bcolors.BOLD+"Chunk Size:", s)
         print (bcolors.OKBLUE+"Regression Algorithms:")
         print(bcolors.OKGREEN+"Linear Regression --",
               c ,"RMSE:", mean_squared_error(regTestTarget, linRegPredict), "R2 Score:", r2_score(regTestTarget, linRegPredict))
 
+        tempLine = "Linear Regression -- %s" %c  + " RMSE:%s" %mean_squared_error(regTestTarget, linRegPredict) + " R2 Score:%f" %r2_score(regTestTarget, linRegPredict)
+        fileLines.append(tempLine)
+
         print(bcolors.OKGREEN+"Ridge Regression --",
               c , "RMSE:",mean_squared_error(regTestTarget, ridgeRegPredict), "R2 Score:", r2_score(regTestTarget, ridgeRegPredict))
-
+        tempLine = "Ridge Regression -- %s"%c+" RMSE:%s"%mean_squared_error(regTestTarget, ridgeRegPredict)+" R2 Score:%s"%r2_score(regTestTarget, ridgeRegPredict)
+        fileLines.append(tempLine)
         print(bcolors.OKBLUE + "Classification Algorithms:")
         try:
             randomForest.fit(classTrainFeatures, classTrainTarget)
             randomForestPredict = randomForest.predict(classTestFeatures)
             print(bcolors.OKGREEN+"Random Forest --",
                   c,"Accuracy:", precision_score(classTestTarget, randomForestPredict, average='weighted'), "f1 Score:", f1_score(classTestTarget, randomForestPredict, average='weighted'))
+            tempLine = "Random Forest -- %s"%c + " Accuracy:%s" %precision_score(classTestTarget, randomForestPredict, average='weighted')+" f1 Score:%s"%f1_score(classTestTarget, randomForestPredict, average='weighted')
+            fileLines.append(tempLine)
         except Exception as e:
             print (e)
-
 
         try:
             logReg.fit(classTrainFeatures, classTrainTarget)
             logRegPredict = logReg.predict(classTestFeatures)
             print(bcolors.OKGREEN+"Logistic Regression--",
                   c,"Accuracy:", precision_score(classTestTarget, logRegPredict, average='weighted'), "f1 Score:", f1_score(classTestTarget, logRegPredict, average='weighted'))
+
+            tempLine = "Logistic Regression-- %s" %c + " Accuracy:%s" %precision_score(classTestTarget, logRegPredict, average='weighted') + " f1 Score:%s"%f1_score(classTestTarget, logRegPredict, average='weighted')
+            fileLines.append(tempLine)
+            fileLinesFinal.extend(fileLines)            #print(fileLines)
         except Exception as e:
             print (e)
+
+try:
+    absPathOutput = os.path.abspath("output/output.txt")
+    outFile = open(absPathOutput, 'w')
+    outFile.write("\n".join(fileLinesFinal))
+except Exception as e:
+    print(e)

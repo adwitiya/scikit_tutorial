@@ -1,0 +1,15 @@
+Chunk Size: 100
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:2.0523608312e-19 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000179382383474 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.938095238095 f1 Score:0.887901234568
+Chunk Size: 100
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:10042165469.7 R2 Score:0.970983
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:10042164000.5 R2 Score:0.970983503702
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.975 f1 Score:0.968733153639
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.916666666667 f1 Score:0.906666666667
+Chunk Size: 100
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:52568526.3 R2 Score:-5.199190
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:23441046.7804 R2 Score:-1.76430600992
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.79012345679 f1 Score:0.600378787879
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.624691358025 f1 Score:0.520454545455

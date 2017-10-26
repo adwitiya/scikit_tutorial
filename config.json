@@ -1,6 +1,6 @@
 {
-  "The SUM dataset, without noise.csv" : ["Target", ";", [], "createFeatureSum", "Target Class"] ,
-  "The SUM dataset, with noise.csv" : ["Noisy Target", ";", [], "createFeatureNoisySum", "Noisy Target Class"],
-  "OnlineNewsPopularity.csv" : [" shares", ",", ["url"], "createFeatureNews", "sharesClass"],
-  "Skin_NonSkin.txt" : ["T", "\t", [], "createFeatureSkin", "TC"]
+  "datasets/The SUM dataset, without noise.csv" : ["Target", ";", [], "createFeatureSum", "Target Class"] ,
+  "datasets/The SUM dataset, with noise.csv" : ["Noisy Target", ";", [], "createFeatureNoisySum", "Noisy Target Class"],
+  "datasets/OnlineNewsPopularity.csv" : [" shares", ",", ["url"], "createFeatureNews", "sharesClass"],
+  "datasets/Skin_NonSkin.txt" : ["T", "\t", [], "createFeatureSkin", "TC"]
 }
