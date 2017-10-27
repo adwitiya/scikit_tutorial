@@ -1,15 +1,176 @@
 Chunk Size: 100
-Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:2.0523608312e-19 R2 Score:1.000000
-Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000179382383474 R2 Score:1.0
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000453030 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.0133933708779 R2 Score:1.0
 Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
 Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.938095238095 f1 Score:0.887901234568
+Chunk Size: 500
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000662228 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.00295653252418 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.911640826873 f1 Score:0.899258648948
+Chunk Size: 1000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000515751 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.00142264407303 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.918711819389 f1 Score:0.923070656431
+Chunk Size: 5000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000248596 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000351096477411 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.909502831092 f1 Score:0.905222377221
+Chunk Size: 10000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000542969 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000469710016592 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.918493766777 f1 Score:0.909407338989
+Chunk Size: 50000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000001794322 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000213763117192 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.897731666951 f1 Score:0.903301068306
+Chunk Size: 100000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000000340979 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000454092340967 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.894274011455 f1 Score:0.903208545682
+Chunk Size: 500000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000003760302 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000702578213548 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.894962776768 f1 Score:0.903990351827
+Chunk Size: 1000000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000002799101 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000597381877551 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.89532893404 f1 Score:0.90401995284
+Chunk Size: 5000000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000002799101 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000597381877551 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.89532893404 f1 Score:0.90401995284
+Chunk Size: 10000000
+Linear Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000000002799101 R2 Score:1.000000
+Ridge Regression -- datasets/The SUM dataset, without noise.csv RMSE:0.000597381877551 R2 Score:1.0
+Random Forest -- datasets/The SUM dataset, without noise.csv Accuracy:1.0 f1 Score:1.0
+Logistic Regression-- datasets/The SUM dataset, without noise.csv Accuracy:0.89532893404 f1 Score:0.90401995284
+
+
 Chunk Size: 100
-Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:10042165469.7 R2 Score:0.970983
-Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:10042164000.5 R2 Score:0.970983503702
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:100210.605574732369860 R2 Score:0.970983
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:100210.598244 R2 Score:0.970983503702
 Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.975 f1 Score:0.968733153639
 Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.916666666667 f1 Score:0.906666666667
+Chunk Size: 500
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:88557.129511782652116 R2 Score:0.984098
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:88557.1294998 R2 Score:0.984098131651
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.979820337765 f1 Score:0.979828727818
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.910177404295 f1 Score:0.907867417136
+Chunk Size: 1000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83645.479496478888905 R2 Score:0.984591
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83645.4794931 R2 Score:0.984590966534
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.980041666667 f1 Score:0.979779302118
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.905419038583 f1 Score:0.912127271681
+Chunk Size: 5000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83328.142269540068810 R2 Score:0.986112
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83328.1422695 R2 Score:0.986111562214
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.961183565026 f1 Score:0.961130781077
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.898948122466 f1 Score:0.889256936488
+Chunk Size: 10000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83798.359974437247729 R2 Score:0.985729
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83798.3599744 R2 Score:0.9857292526
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.971078030232 f1 Score:0.971135363878
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.914532989931 f1 Score:0.904782783292
+Chunk Size: 50000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83335.869222361841821 R2 Score:0.985819
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83335.8692224 R2 Score:0.985818855924
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.966415690304 f1 Score:0.966464919997
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.89110533153 f1 Score:0.898934798095
+Chunk Size: 100000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83695.477486837276956 R2 Score:0.985628
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83695.4774868 R2 Score:0.985627831375
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.965958729572 f1 Score:0.965960442626
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.887212482101 f1 Score:0.896402903652
+Chunk Size: 500000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83691.664611371248611 R2 Score:0.985672
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83691.6646114 R2 Score:0.985672103157
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.967678809285 f1 Score:0.967682463435
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.888376362671 f1 Score:0.897385183405
+Chunk Size: 1000000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.881137666394352 R2 Score:0.985637
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.8811377 R2 Score:0.985637302167
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.9683982825 f1 Score:0.968383232021
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.888424311169 f1 Score:0.897317461711
+Chunk Size: 5000000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.881137666394352 R2 Score:0.985637
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.8811377 R2 Score:0.985637302167
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.968286671129 f1 Score:0.968272383674
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.888424311169 f1 Score:0.897317461711
+Chunk Size: 10000000
+Linear Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.881137666394352 R2 Score:0.985637
+Ridge Regression -- datasets/The SUM dataset, with noise.csv RMSE:83567.8811377 R2 Score:0.985637302167
+Random Forest -- datasets/The SUM dataset, with noise.csv Accuracy:0.968293843517 f1 Score:0.968277307388
+Logistic Regression-- datasets/The SUM dataset, with noise.csv Accuracy:0.888424311169 f1 Score:0.897317461711
+
+
 Chunk Size: 100
-Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:52568526.3 R2 Score:-5.199190
-Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:23441046.7804 R2 Score:-1.76430600992
-Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.79012345679 f1 Score:0.600378787879
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:7250.415594984882773 R2 Score:-5.199190
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:4841.59547881 R2 Score:-1.76430600992
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.777380952381 f1 Score:0.543703703704
 Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.624691358025 f1 Score:0.520454545455
+Chunk Size: 500
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:3095.033859291193039 R2 Score:-0.354559
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:3002.56154366 R2 Score:-0.274826517266
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.633160991264 f1 Score:0.633219010289
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.601137980085 f1 Score:0.600142247511
+Chunk Size: 1000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:3849.841738044156500 R2 Score:-0.046899
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:3847.60354754 R2 Score:-0.0456824603783
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.557931034483 f1 Score:0.558743370053
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.571811383279 f1 Score:0.570748548389
+Chunk Size: 5000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:9602.639277243539254 R2 Score:-0.029073
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:9596.50127232 R2 Score:-0.0277581013733
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.608056772829 f1 Score:0.599748252356
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.578000318589 f1 Score:0.540934942503
+Chunk Size: 10000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:6717.182269845503470 R2 Score:-0.067417
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:6715.32528067 R2 Score:-0.0668270231913
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.652127879892 f1 Score:0.643187879065
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.585817051924 f1 Score:0.554931825867
+Chunk Size: 50000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:14624.306090042737196 R2 Score:-2.132276
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:9799.29173679 R2 Score:-0.406367793362
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.665959864248 f1 Score:0.664111757988
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.607281154127 f1 Score:0.60612771027
+Chunk Size: 100000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:14624.306090042737196 R2 Score:-2.132276
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:9799.29173679 R2 Score:-0.406367793362
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.666092931661 f1 Score:0.664113176655
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.607281154127 f1 Score:0.60612771027
+Chunk Size: 500000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:14624.306090042737196 R2 Score:-2.132276
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:9799.29173679 R2 Score:-0.406367793362
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.667878804766 f1 Score:0.666148468592
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.607281154127 f1 Score:0.60612771027
+Chunk Size: 1000000
+Linear Regression -- datasets/OnlineNewsPopularity.csv RMSE:14624.306090042737196 R2 Score:-2.132276
+Ridge Regression -- datasets/OnlineNewsPopularity.csv RMSE:9799.29173679 R2 Score:-0.406367793362
+Random Forest -- datasets/OnlineNewsPopularity.csv Accuracy:0.66530728529 f1 Score:0.663376201576
+Logistic Regression-- datasets/OnlineNewsPopularity.csv Accuracy:0.607281154127 f1 Score:0.60612771027
+
+
+Chunk Size: 100000
+Linear Regression -- datasets/Skin_NonSkin.txt RMSE:0.293193835344484 R2 Score:0.656118
+Ridge Regression -- datasets/Skin_NonSkin.txt RMSE:0.293193835288 R2 Score:0.656117807613
+Random Forest -- datasets/Skin_NonSkin.txt Accuracy:0.999400429705 f1 Score:0.999399997181
+Logistic Regression-- datasets/Skin_NonSkin.txt Accuracy:0.907040419322 f1 Score:0.906955185865
+Chunk Size: 500000
+Linear Regression -- datasets/Skin_NonSkin.txt RMSE:0.284451691895872 R2 Score:0.507914
+Ridge Regression -- datasets/Skin_NonSkin.txt RMSE:0.284451691893 R2 Score:0.507913569598
+Random Forest -- datasets/Skin_NonSkin.txt Accuracy:0.999578940256 f1 Score:0.999578461955
+Logistic Regression-- datasets/Skin_NonSkin.txt Accuracy:0.920116660948 f1 Score:0.919280112822
+Chunk Size: 1000000
+Linear Regression -- datasets/Skin_NonSkin.txt RMSE:0.284451691895872 R2 Score:0.507914
+Ridge Regression -- datasets/Skin_NonSkin.txt RMSE:0.284451691893 R2 Score:0.507913569598
+Random Forest -- datasets/Skin_NonSkin.txt Accuracy:0.999606055138 f1 Score:0.999605648434
+Logistic Regression-- datasets/Skin_NonSkin.txt Accuracy:0.920116660948 f1 Score:0.919280112822

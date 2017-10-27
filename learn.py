@@ -10,7 +10,7 @@
 #               GitHub Repo: https://goo.gl/F9zbHp                     *
 #                Build Date: 24.10.2017                                *
 #/*********************************************************************/
-
+import numpy as np
 import pandas as pd
 import json
 import os
@@ -33,6 +33,7 @@ class bcolors:
     FAIL = '\033[91m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
 
 def createFeatureNews(df):
 
@@ -60,7 +61,6 @@ def createFeatureSkin(df):
 
 # Chunk Sizes for datasets
 chunkSizes = [100,500,1000,5000,10000,50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000]
-chunkSizes =[100]
 fileLinesFinal = []
 
 try:
@@ -102,7 +102,6 @@ for c in configDict:
         classTrainFeatures, classTestFeatures, classTrainTarget, classTestTarget = train_test_split(trainingFeatures, classTarget, test_size=0.3,
                                                             random_state=0)
 
-
         linReg.fit(regTrainFeatures, regTrainTarget)
         linRegPredict = linReg.predict(regTestFeatures)
 
@@ -116,16 +115,18 @@ for c in configDict:
         print (bcolors.BOLD+"Chunk Size:", s)
         print (bcolors.OKBLUE+"Regression Algorithms:")
         print(bcolors.OKGREEN+"Linear Regression --",
-              c ,"RMSE:", mean_squared_error(regTestTarget, linRegPredict), "R2 Score:", r2_score(regTestTarget, linRegPredict))
-
-        tempLine = "Linear Regression -- %s" %c  + " RMSE:%s" %mean_squared_error(regTestTarget, linRegPredict) + " R2 Score:%f" %r2_score(regTestTarget, linRegPredict)
+              c ,"RMSE: %.15f" %np.sqrt(mean_squared_error(regTestTarget, linRegPredict)), "R2 Score:", r2_score(regTestTarget, linRegPredict))
+        tempLine = "Linear Regression -- %s" %c  + " RMSE:%.15f" %np.sqrt(mean_squared_error(regTestTarget, linRegPredict)) + " R2 Score:%f" %r2_score(regTestTarget, linRegPredict)
         fileLines.append(tempLine)
 
         print(bcolors.OKGREEN+"Ridge Regression --",
-              c , "RMSE:",mean_squared_error(regTestTarget, ridgeRegPredict), "R2 Score:", r2_score(regTestTarget, ridgeRegPredict))
-        tempLine = "Ridge Regression -- %s"%c+" RMSE:%s"%mean_squared_error(regTestTarget, ridgeRegPredict)+" R2 Score:%s"%r2_score(regTestTarget, ridgeRegPredict)
+              c , "RMSE:",np.sqrt(mean_squared_error(regTestTarget, ridgeRegPredict)), "R2 Score:", r2_score(regTestTarget, ridgeRegPredict))
+
+        tempLine = "Ridge Regression -- %s"%c+" RMSE:%s"%np.sqrt(mean_squared_error(regTestTarget, ridgeRegPredict))+" R2 Score:%s"%r2_score(regTestTarget, ridgeRegPredict)
         fileLines.append(tempLine)
+
         print(bcolors.OKBLUE + "Classification Algorithms:")
+
         try:
             randomForest.fit(classTrainFeatures, classTrainTarget)
             randomForestPredict = randomForest.predict(classTestFeatures)
@@ -144,7 +145,7 @@ for c in configDict:
 
             tempLine = "Logistic Regression-- %s" %c + " Accuracy:%s" %precision_score(classTestTarget, logRegPredict, average='weighted') + " f1 Score:%s"%f1_score(classTestTarget, logRegPredict, average='weighted')
             fileLines.append(tempLine)
-            fileLinesFinal.extend(fileLines)            #print(fileLines)
+            fileLinesFinal.extend(fileLines)
         except Exception as e:
             print (e)
 
