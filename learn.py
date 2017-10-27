@@ -3,7 +3,6 @@
 #               using scikit-learn.                                    *
 #     Authors:  Kariem Fahmi                                           *
 #               Adwitiya Chakraborty                                   *
-#               Salil Ajgoankar                                        *
 #                                                                      *
 #      Purpose: Evaluate ML Algorithms in Different Real Life datasets.*
 #                                                                      *
